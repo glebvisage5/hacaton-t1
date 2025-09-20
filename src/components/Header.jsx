@@ -1,18 +1,26 @@
-import logo from '../assets/logo.svg'
+import React from 'react';
+import { Link, NavLink } from 'react-router-dom'
+import '../profile.css';
 
 export default function Header(){
+
     return (
-        <header className="header">
-            <div style={{display:'flex',alignItems:'center',gap:12}}>
-                <img src={logo} width={120} height={36} alt="HR Консультант"/>
-            </div>
-            <nav className="nav">
-                <a href="#" className="active">Профиль</a>
-                <a href="#">Возможности</a>
-                <a href="#">Обучение</a>
-                <a href="#">Путь</a>
-                <a href="#">HR-аналитика</a>
-            </nav>
-        </header>
-    )
+        <>
+            <header className='Header'>
+                <div className='Logo'>
+                    <img src="/logo.png" alt="Hr-консультант" />
+                    <Link to="/">Hr-консультант</Link>
+                </div>
+                <nav className='Navigation'>
+                    <NavLink to="/" end>Главная страница</NavLink>
+                    <NavLink to="/how-it-works">Как это работает?</NavLink>
+                    <NavLink to="/contacts">Контакты</NavLink>
+                </nav>
+                <section className='Buttons'>
+                    <Link to="/auth">Войти</Link>
+                    <Link to="/registration">Зарегистрироваться</Link>
+                </section>
+            </header>
+        </>
+    );
 }

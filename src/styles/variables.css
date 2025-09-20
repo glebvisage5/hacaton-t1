@@ -8,3 +8,6 @@
   --button-color:#D5DBF1;
   --color-linear:linear-gradient(90deg,#2D6D00 0%,#589D00 100%);
 }
+.gradient-bg {
+  background: linear-gradient(90deg, #2D6D00 0%, #589D00 100%);
+}

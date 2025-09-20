@@ -1,0 +1,48 @@
+.Header{
+    width: 88.542vw;
+    height: 4.167vw;
+    border-radius: 0 0 2.083vw 2.083vw;
+    background-color: white;
+    box-shadow: 0 .208vw .208vw rgba(0,0,0,0.25);
+    padding-left: 2.344vw;
+    padding-right: 2.344vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.Logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .781vw;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1.042vw;
+}
+.Logo img{
+    width: 3.22vw;
+    height: 3.646vw;
+}
+.Navigation{
+    display: inline-flex;
+    align-items: center;
+    gap: 1.302vw;
+    color: var(--text-color);
+    font-weight: 400;
+    font-size: 1.042vw;
+}
+a{
+    color: var(--text-color);
+}
+.Buttons{
+    display: flex;
+    width: 14.063vw;
+    height: 1.25vw;
+    justify-content: center;
+    align-items: center;
+    gap: 1.042vw;
+    font-weight: 400;
+    font-size: 1.042vw;
+    color: var(--text-color);
+}

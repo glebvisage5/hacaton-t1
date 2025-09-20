@@ -1,0 +1,169 @@
+.AuthPage{
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    background: var(--background-color);
+}
+.MainAuthentification{
+    width: 23.438vw;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4.063vw;
+    margin-top: 9.823vw;
+    margin-inline: auto;
+}
+.Footer{
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: .833vw;
+    color: var(--text-color-secondary);
+    font-size: .677vw;
+    font-weight: 500;
+    padding-bottom: 1.563vw;
+    z-index: 1;
+}
+.Footer__logo{
+    width: 5.846vw;
+    height: 3.646vw;
+    object-fit: contain;
+}
+
+.MainAuthentification__Header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .469vw;
+    text-align: center;
+}
+.Header__subtitle{
+    color: var(--text-color-secondary);
+    font-weight: 600;
+    font-size: .781vw;
+    margin: 0;
+}
+.Header__title{
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1.25vw;
+    margin: 0;
+}
+
+.MainAuthentification__Form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.667vw;
+    width: 100%;
+}
+.MainAuthentification__Form__Container{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: .417vw;
+    width: 100%;
+}
+.Container{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.302vw;
+    width: 100%;
+}
+
+.Field{
+    position: relative;
+}
+.Input{
+    width: 23.438vw;
+    height: 3.49vw;
+    padding-inline: .781vw;
+    border-radius: .833vw;
+    border: 1px solid var(--text-color-secondary);
+    background: #fff;
+    color: var(--text-color-secondary);
+    font-weight: 600;
+    outline: none;
+    transition: border-color .2s ease, color .2s ease, box-shadow .2s ease;
+}
+.Input:focus{
+    border-color: var(--text-color);
+    box-shadow: 0 .104vw .26vw rgba(0,0,0,.08);
+}
+.Input--filled{
+    color: var(--text-color);
+}
+.Input--error{
+    border-color: var(--error-color);
+}
+
+
+.Label{
+  position: absolute;
+  left: .781vw;
+  top: .156vw;
+  color: var(--text-color-secondary);
+  font-weight: 600;
+  pointer-events: none;
+  transition: transform .15s ease, font-size .15s ease, top .15s ease, color .15s ease;
+  font-size: .833vw;
+}
+.Label__req{ 
+    color: var(--error-color); 
+}
+.Input::placeholder{ 
+    color: transparent; 
+}
+.Input:placeholder-shown + .Label{
+    top: 1.142vw;
+    font-size: .938vw;
+}
+
+.Input:focus + .Label, .Input--filled + .Label{
+    top: .156vw;
+    font-size: .833vw;
+    color: var(--text-color-secondary);
+}
+
+.Error{
+    margin-top: .26vw;
+    color: var(--error-color);
+    font-size: .781vw;
+    font-weight: 500;
+}
+
+.Main__Navigation{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.Nav__link{
+    color: var(--text-color);
+    font-size: .781vw;
+    font-weight: 400;
+}
+
+.MainAuthentification__Form__Button{
+    width: 23.438vw;
+    height: 3.49vw;
+    border-radius: .833vw;
+    border: 1px solid var(--button-color);
+    font-size: 1.146vw;
+    font-weight: 700;
+    color: var(--background-color);
+    background: var(--button-color);
+    cursor: not-allowed;
+    transition: background .3s, border .3s, color .3s, box-shadow .3s, opacity .2s;
+    margin-top: .5vw;
+}
+.MainAuthentification__Form__Button.is-enabled{
+    cursor: pointer;
+    background: linear-gradient(90deg,#4343FF 0%,#5274FF 100%);
+    border-color: transparent;
+}
