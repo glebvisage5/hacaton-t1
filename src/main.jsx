@@ -4,7 +4,6 @@ import { BrowserRouter } from 'react-router-dom'
 
 import './styles/variables.css'
 import './styles/global.css'
-import './App.css'
 
 import App from './App.jsx'
 

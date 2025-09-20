@@ -1,13 +1,12 @@
 :root{
-  --main-color:#498201;
-  --main-color-blur:#498201B2;
+  --main-color:#002AFB;
+  --main-color-blur:#002AFB99;
   --text-color:#010D35;
   --background-color:#F7F8FA;
   --text-color-secondary:#80869a;
   --error-color:#EC4E4E;
   --button-color:#D5DBF1;
-  --color-linear:linear-gradient(90deg,#2D6D00 0%,#589D00 100%);
 }
 .gradient-bg {
-  background: linear-gradient(90deg, #2D6D00 0%, #589D00 100%);
+  background: linear-gradient(90deg, #4343FF 0%, #5274FF 100%);
 }

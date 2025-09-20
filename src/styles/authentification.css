@@ -120,7 +120,7 @@
     color: transparent; 
 }
 .Input:placeholder-shown + .Label{
-    top: 1.142vw;
+    top: .942vw;
     font-size: .938vw;
 }
 

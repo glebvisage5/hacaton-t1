@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom'
-import '../profile.css';
+import './header.css';
 
 export default function Header(){
 

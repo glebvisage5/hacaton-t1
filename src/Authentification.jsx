@@ -1,8 +1,11 @@
 import { useMemo, useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from './stories/useAuth';
 import './styles/authentification.css';
 
 export default function Authentification() {
+    const navigate = useNavigate();
+    const { login } = useAuth();
     const [values, setValues] = useState({ login: '', password: '' });
     const [touched, setTouched] = useState({ login: false, password: false });
 
@@ -16,15 +19,14 @@ export default function Authentification() {
     }, [values]);
 
     const isValid = Object.keys(errors).length === 0;
-
     const setField = (name, val) => setValues(v => ({ ...v, [name]: val }));
 
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault();
         setTouched({ login: true, password: true });
         if (!isValid) return;
-        console.log('LOGIN ->', values);
-        alert('Авторизация прошла проверку на клиенте');
+        const res = await login({ login: values.login, password: values.password });
+        if (res?.ok) navigate('/', { replace: true });
     };
 
     return (
@@ -33,7 +35,6 @@ export default function Authentification() {
                 <section className="MainAuthentification__Header">
                     <p className="Header__title">Авторизация учётной записи</p>
                 </section>
-
                 <section className="MainAuthentification__Form">
                     <div className="MainAuthentification__Form__Container">
                         <form id="authForm" className="Container" onSubmit={onSubmit}>
@@ -44,7 +45,6 @@ export default function Authentification() {
                                 <label htmlFor="login" className="Label">Логин <span className="Label__req">*</span></label>
                                 {touched.login && errors.login && <p className="Error">{errors.login}</p>}
                             </div>
-
                             <div className="Field">
                                 <input id="password" name="password" type="password" placeholder=" "
                                     className={`Input ${values.password ? 'Input--filled' : ''} ${touched.password && errors.password ? 'Input--error' : ''}`}
@@ -52,19 +52,18 @@ export default function Authentification() {
                                 <label htmlFor="password" className="Label">Пароль <span className="Label__req">*</span></label>
                                 {touched.password && errors.password && <p className="Error">{errors.password}</p>}
                             </div>
-
                             <div className="Main__Navigation">
                                 <Link to="/registration" className="Nav__link">Нет аккаунта?</Link>
                                 <Link to="/recovery" className="Nav__link">Забыли пароль?</Link>
                             </div>
-
-                            <button id="loginBtn" type="submit" disabled={!isValid} className={`MainAuthentification__Form__Button ${isValid ? 'is-enabled' : ''}`}>Войти</button>
-                            <Link to="/" className='Nav__link'>На главную</Link>
+                            <button id="loginBtn" type="submit" disabled={!isValid} className={`MainAuthentification__Form__Button ${isValid ? 'is-enabled' : ''}`}>
+                                Войти
+                            </button>
+                            <Link to="/" className="Nav__link">На главную</Link>
                         </form>
                     </div>
                 </section>
             </main>
-
             <footer className="Footer">
                 <p>Ⓒpowered by Жёлтые козырьки 2025</p>
             </footer>
